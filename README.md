@@ -24,6 +24,9 @@
 dotnet run --project Client
 ```
 Вводим адрес подключения
+```bash
+https://localhost:7169
+```
 Вызываем команду получения вагонов 
 ```bash
 WagonService GetWagons
