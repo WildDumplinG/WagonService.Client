@@ -6,7 +6,11 @@ internal class Program
 
     private static void Main(string[] args)
     {
-        ConsoleController.AddBehavior(new WagonService.Client.Services.WagonService("https://localhost:7169"));
+        System.Console.WriteLine("Введите строку подключения");
+
+        var connection = System.Console.ReadLine();
+
+        ConsoleController.AddBehavior(new WagonService.Client.Services.WagonService(connection!));
 
         ConsoleController.Read();
     }
