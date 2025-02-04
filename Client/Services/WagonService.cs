@@ -17,7 +17,7 @@ namespace WagonService.Client.Services
 
         private GrpcChannel _grpcChannel { get; set; }
 
-        public void GetWagons()
+        public async Task GetWagons()
         {
             var client = new WagonServiceClient(_grpcChannel);
 
@@ -27,7 +27,7 @@ namespace WagonService.Client.Services
             var endTime = System.Console.ReadLine();
 
             var request = new WagonRequest { StartTime = startTime, EndTime = endTime };
-            var response = client.GetWagons(request);
+            var response = await client.GetWagonsAsync(request);
 
             System.Console.WriteLine("Полученные вагоны:");
             foreach (var wagon in response.Wagons)
